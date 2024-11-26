@@ -8,11 +8,28 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
    return Scaffold(
       appBar: AppBar(
-        title: Text('Id of the coffee - Home Page'), 
-        backgroundColor: Colors.brown[400],
+        title: Text('Id of the coffee - Home Page', style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          )), 
+        backgroundColor: Colors.brown[1000],
         centerTitle: true,
         ),
-        body:const Text('Hello World'),
+        body:Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+             color: Colors.brown[200],
+             padding: const EdgeInsets.all(30.0),
+             child: const Text('How I like my coffee:'),
+            ),
+            Container(
+              color: Colors.brown[100],
+              padding: const EdgeInsets.all(30.0),
+              child: const Text('Coffee preferences:'),
+            ),
+          ],
+        ),
     );
   }
 }
