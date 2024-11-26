@@ -9,11 +9,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
    return Scaffold(
       appBar: AppBar(
-        title: Text('Id of the coffee - Home Page', style: TextStyle(
+        title: Text('My Coffee ID', style: TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
           )), 
-        backgroundColor: Colors.brown[1000],
+        backgroundColor: Colors.brown[700],
         centerTitle: true,
         ),
         body:Column(
@@ -29,6 +29,12 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.all(30.0),
               child: coffee_prefs(), // coffee_prefs
             ),
+            Expanded(
+              child: Image.asset('Assets/imgs/coffee_bg.jpg',
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.bottomCenter,
+              )
+              )
           ],
         ),
     );
