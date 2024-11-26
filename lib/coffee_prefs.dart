@@ -12,6 +12,11 @@ class coffee_prefs extends StatelessWidget {
         children: [
           Text('Strength:'),
           Text('3'),
+          Image.asset('Assets/imgs/coffee_bean.png', // Image
+          width: 40,
+          color: Colors.brown[100], // Color
+          colorBlendMode: BlendMode.multiply, // BlendMode
+          ),
           SizedBox(width: 50),
         ],
       ),
@@ -19,6 +24,11 @@ class coffee_prefs extends StatelessWidget {
         children: [
           Text('Sweetness:'),
           Text('2'),
+          Image.asset('Assets/imgs/sugar_cube.png',
+          width:40,
+          color: Colors.brown[100],
+          colorBlendMode: BlendMode.multiply,
+          ),
           SizedBox(width: 50),
         ],
       ),
