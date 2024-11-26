@@ -23,7 +23,7 @@ class _coffee_prefsState extends State<coffee_prefs> {
 
   void incrementSweetness() {
     setState(() { // set state is a method that updates the UI
-      Sweetness = Sweetness < 5 ? Sweetness + 1 : 1;
+      Sweetness = Sweetness < 5 ? Sweetness + 1 : 0;
     });
   }
 
@@ -34,12 +34,14 @@ class _coffee_prefsState extends State<coffee_prefs> {
       Row(
         children: [
           Text('Strength:'),
-          Text('$Strength'),
-          Image.asset('Assets/imgs/coffee_bean.png', // Image
-          width: 25,
-          color: Colors.brown[100], // Color
-          colorBlendMode: BlendMode.multiply, // BlendMode
-          ),
+
+          for (int i = 0; i < Strength; i++)     
+            Image.asset('Assets/imgs/coffee_bean.png', // Image
+            width: 25,
+            color: Colors.brown[100], // Color
+            colorBlendMode: BlendMode.multiply, // BlendMode
+            ),
+
           const Expanded(child: SizedBox()),
           // add filled button
           OutlinedButton(
@@ -56,12 +58,16 @@ class _coffee_prefsState extends State<coffee_prefs> {
       Row(
         children: [
           Text('Sweetness:'),
-          Text('$Sweetness'),
-          Image.asset('Assets/imgs/sugar_cube.png',
-          width:25,
-          color: Colors.brown[100],
-          colorBlendMode: BlendMode.multiply,
-          ),
+
+          if (Sweetness == 0)
+            Text('None'),
+          
+          for (int i = 0; i < Sweetness; i++)
+            Image.asset('Assets/imgs/sugar_cube.png',
+            width:25,
+            color: Colors.brown[100],
+            colorBlendMode: BlendMode.multiply,
+            ),
           const Expanded(child: SizedBox()),
           OutlinedButton(
             style: OutlinedButton.styleFrom(
