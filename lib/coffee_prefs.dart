@@ -1,3 +1,4 @@
+import 'package:coffee_card/style_body_text.dart';
 import 'package:flutter/material.dart';
 
 
@@ -33,7 +34,7 @@ class _coffee_prefsState extends State<coffee_prefs> {
     children: [
       Row(
         children: [
-          Text('Strength:'),
+          const StyledBody(text: 'Strength:'), // StyledBody
 
           for (int i = 0; i < Strength; i++)     
             Image.asset('Assets/imgs/coffee_bean.png', // Image
@@ -57,7 +58,7 @@ class _coffee_prefsState extends State<coffee_prefs> {
       ),
       Row(
         children: [
-          Text('Sweetness:'),
+          const StyledBody(text: 'Sweetness:'), // StyledBody
 
           if (Sweetness == 0)
             Text('None'),
